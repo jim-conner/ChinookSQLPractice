@@ -1,0 +1,2 @@
+# ChinookSQLPractice
+Practicing SQL queries
