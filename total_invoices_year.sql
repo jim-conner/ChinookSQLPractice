@@ -7,6 +7,16 @@ from Invoice
 	where year(InvoiceDate) in (2009, 2011)
 	group by year(InvoiceDate)
 
+-- with case when
+select
+	sum (case when year(InvoiceDate) = '2009' 
+		then 1 else 0 end
+		)as Invoices2009
+	,sum(case when year(InvoiceDate) = '2011'
+		then 1 else 0 end
+		) as Invoices2011
+from Invoice
+
 /*false start
 select count(InvoiceId) as InvoiceCount2009
 from Invoice i
