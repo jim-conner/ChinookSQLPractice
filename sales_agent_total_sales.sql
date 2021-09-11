@@ -9,8 +9,9 @@ select e.FirstName + ' ' + e.LastName as [Rep],
 	SUM(i.Total) as [TotalSales], YEAR(i.InvoiceDate) [Year]
 from Employee e
 join Customer c on c.SupportRepId = e.EmployeeId
-join Invoice i on c.CustomerId = i.InvoiceId
+join Invoice i on c.CustomerId = i.CustomerId
 group by SupportRepId, e.FirstName, e.LastName, YEAR(i.InvoiceDate)
+-- I was joining c.CustomerId = i.Invoice
 
 SELECT
 	Employee.FirstName + ' ' + Employee.LastName as [Sales Rep],
